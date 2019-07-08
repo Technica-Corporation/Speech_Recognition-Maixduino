@@ -13,25 +13,12 @@
 #include "model_invalidc.h"
 #include "mic_array.h"
 
-#define RECORD_MODE 0 // 0 for speech recognition, 1 for collecting models
 #define LABEL_TEXT_SIZE 2 
 
 // This is labeled as a red squiggle for some reason; it still compiles though... 
 SPIClass spi_(SPI0); // MUST be SPI0 for Maix series on board LCD
 Sipeed_ST7789 lcd(320, 240, spi_, SIPEED_ST7789_DCX_PIN, SIPEED_ST7789_RST_PIN, DMAC_CHANNEL2);
 SpeechRecognizer rec;
-
-#if RECORD_MODE
-void recordModel() {
-  Serial.println("Start recording...");
-  if( rec.record(0, 0) == 0) //keyword_num, model_num 
-  {    
-    rec.print_model(0, 0);
-  }
-  else 
-      Serial.println("Recording failed! Reset the board.");
-}
-#endif
 
 void printCenterOnLCD(Sipeed_ST7789 &lcd_, const char *msg, uint8_t textSize = LABEL_TEXT_SIZE) 
 {
@@ -67,11 +54,6 @@ void setup() {
   delay(1000);
   Serial.begin(115200);
   
-#if RECORD_MODE
-  recordModel();
-  while(1);
-#endif
-
   if (!lcd.begin(15000000, COLOR_BLACK)) {
     Serial.println("");
     while(1); 
