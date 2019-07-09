@@ -1,32 +1,41 @@
 # Maix Speech Recognition Demo
 
-Quick Speech Recognition demo using the Maixduino Speech Recognition library.
+Quick Speech Recognition demo using the Maixduino Speech Recognition library on MAIX ONE DOCK with LCD screen and Microphone Array.
 
 ### Prerequisites
 
-This demo was run on a Sipeed Maix One Dock with the Microphone Array and LCD screen. 
-I had tried using the built-in microphone, but was unable to get it working with Maixduino; the microphone did work when used with just the k210 standalone SDK though.
+* [PlatformIO](https://platformio.org/install/ide?install=vscode)
+* [Sipeed-Kendryte210 Platform](https://github.com/sipeed/platform-kendryte210)
+* * toolchain-kendryte210: 8.2.0
+* * framework-maixduino: 0.3.9
+* * framework-kendryte-standalone-sdk: 0.5.4
+* * tool-kflash-kendryte210: 0.9.1
+* Sipeed MAIX ONE DOCK (M1 Dock)
+* LCD Screen
+* Sipeed MAIX R6+1 Microphone Array
 
-I used PlatformIO to build this demo, so these instructions will also be using it.
 
 ### Environment Setup
 
-Install PlatformIO(and vscode)
-```
-https://platformio.org/install/ide?install=vscode
-```
+1. Install PlatformIO(and vscode).
 
-Add a new Platform, and select 'Advanced Installation'
+2. Add a new Platform, and select 'Advanced Installation'
 ```
-Use the Sipeed k210 Platform repository for Maixduino v0.3.9
+Use the Sipeed k210 Platform Repository
 https://github.com/sipeed/platform-kendryte210.git#e6ff97955c4cb15f7fe39450cadb8f145caefbf1
 ```
 
-Import the Speech Recognition Demo
+3. Import the Speech Recognition Demo
 ```
 Select 'Sipeed MAIX ONE DOCK' as the board
 Check 'Use libraries installed by Arduino IDE'
 ```
+
+### Library Notes
+
+The Maix Speech Recognition library is included in this project as I needed to make a change to get this demo running.
+I was unable to get the Microphone Array functioning with the hard-coded pins so I added some input parameters to set them in 'begin()'.
+In order to not conflict with library included with Maixduino v0.3.9, they are renamed as Maix_Speech_Recognition_demo.h and Maix_Speech_Recognition_demo.cpp.
 
 ## Running the Demo
 
@@ -51,7 +60,7 @@ Magenta: Change LCD display MAGENTA
 Yellow:  Change LCD display YELLOW
 ```
 
-While running, you will definately notice that it recognizes wrong sometimes; this is pretty normal.
+While running, you will definitely notice that it recognizes wrong sometimes; this is pretty normal.
 I recorded the models on a desk in front of me, so it was fairly close; you may have to adjust your speaking distance. 
 For certain colors you may have to stress some of the vowels as well to get it to register correctly.
 ```
