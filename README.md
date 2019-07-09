@@ -6,10 +6,10 @@ Quick Speech Recognition demo using the Maixduino Speech Recognition library on 
 
 * [PlatformIO](https://platformio.org/install/ide?install=vscode)
 * [Sipeed-Kendryte210 Platform](https://github.com/sipeed/platform-kendryte210)
-* * toolchain-kendryte210: 8.2.0
-* * framework-maixduino: 0.3.9
-* * framework-kendryte-standalone-sdk: 0.5.4
-* * tool-kflash-kendryte210: 0.9.1
+  * toolchain-kendryte210: 8.2.0
+  * framework-maixduino: 0.3.9
+  * framework-kendryte-standalone-sdk: 0.5.4
+  * tool-kflash-kendryte210: 0.9.1
 * Sipeed MAIX ONE DOCK (M1 Dock)
 * LCD Screen
 * Sipeed MAIX R6+1 Microphone Array
