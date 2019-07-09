@@ -72,10 +72,7 @@ Other reasons it will recognize incorrectly it due to how the recognizer itself 
 It will pick the model it thinks is 'closest' to whatever it hears, even if that word/phrase was not included as a model at all.
 
 ## Adding Additional Models
-Models were recorded using the example present in the Maix Speech Recognition library examples.
-```
-https://github.com/sipeed/Maixduino/tree/master/libraries/Maix_Speech_Recognition/examples/get_voice_model
-```
+Models were recorded using the example present in the Maix Speech Recognition library [examples](https://github.com/sipeed/Maixduino/tree/master/libraries/Maix_Speech_Recognition/examples/get_voice_model)
 
 Just use that example to record new models and add them like the four model headers included in this demo.
 The example will output a 'number of frames' and an 'array' to a Serial Monitor.
